@@ -5,6 +5,7 @@ using UnityEngine;
 public class GenerateCubes : MonoBehaviour
 {
     public GameObject CubePrefab;
+    public float scale = 100;
     GameObject[] cubes = new GameObject[512];
 
     // Start is called before the first frame update
@@ -28,6 +29,13 @@ public class GenerateCubes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+        for (int i = 0; i < 512; i ++)
+        {
+            if(cubes != null)
+            {
+                GameObject cube = cubes[i];
+                cube.transform.localScale = new Vector3(1,1+scale*Mathf.Abs(Audios.cubes[i]),1);
+            }
+        }
     }
 }
