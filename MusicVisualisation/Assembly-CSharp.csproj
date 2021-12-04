@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GenerateCubes.cs" />
+     <Compile Include="Assets\Scripts\Audios.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/UNITY/2020.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
