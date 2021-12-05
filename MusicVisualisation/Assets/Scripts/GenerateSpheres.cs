@@ -8,6 +8,8 @@ public class GenerateSpheres : MonoBehaviour
     GameObject[] spheres = new GameObject[512];
     public float [] angles = new float[512];
 
+    public Material[] materials;
+
     public float shift = 1f;
 
     // Start is called before the first frame update
@@ -34,6 +36,17 @@ public class GenerateSpheres : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Renderer render = spherePrefab.GetComponent<Renderer>();
+        for(int i = 0; i < 512; i++)
+        {
+            for (int j = 0; j<7;j++)
+            {
+                if(spheres != null)
+                {
+                    render.sharedMaterial = materials[j];
+                }
+            }
+        }
         
     }
 }

@@ -982,6 +982,14 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  materials:
+  - {fileID: 2100000, guid: ed4bf0638a0b55d4bb171e541867c7d5, type: 2}
+  - {fileID: 2100000, guid: 4d2b65607741e5e43bcdec3fb296a8ab, type: 2}
+  - {fileID: 2100000, guid: 2979540eb452a0949aeadd4a5ecc03af, type: 2}
+  - {fileID: 2100000, guid: bb5b2a016871a8d45aa8a41bb2d4700c, type: 2}
+  - {fileID: 2100000, guid: 7fa8e82e06e3dcb4fa199028fe840ad0, type: 2}
+  - {fileID: 2100000, guid: 8247972a47e3aa64db92f9e74721ba5f, type: 2}
+  - {fileID: 2100000, guid: 3ac549710f21a8d47b78237ecf548736, type: 2}
   shift: 1
 --- !u!4 &1564310782
 Transform:
