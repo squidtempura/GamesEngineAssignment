@@ -13,7 +13,7 @@ public class GenerateSpheres : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float radius = 10;
+        float radius = 100;
         for (int i = 0; i < 512; i ++)
         {
             GameObject sphere = Instantiate(spherePrefab);
