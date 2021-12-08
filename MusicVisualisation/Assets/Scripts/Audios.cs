@@ -7,9 +7,24 @@ public class Audios : MonoBehaviour
     AudioSource audioSource;
     public static float[] cubes = new float[512];
     public static float[] freqBand = new float[8];
+
+    public static float[] bufferBand = new float[8];
+
+    public float[] bufferDecrease = new float[8];
     // Start is called before the first frame update
 
-
+    void BufferBands(){
+		for (int k = 0; k < 8; k++) {
+			if (freqBand[k] > bufferBand[k]){
+				bufferBand [k] = freqBand [k];
+				bufferDecrease [k] = 0.005f;
+			}
+			if (freqBand[k] < bufferBand[k] && (bufferBand[k] - bufferDecrease [k]) > 0){
+				bufferBand [k] -= bufferDecrease [k];
+				bufferDecrease [k] *= 1.4f;
+			}
+		}
+	}
 
     void Start()
     {
@@ -26,6 +41,7 @@ public class Audios : MonoBehaviour
     {
         GetAudioSource();
         MakeFrequencyBands();
+        BufferBands();
     }
 
     void MakeFrequencyBands() {
