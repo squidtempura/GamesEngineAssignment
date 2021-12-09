@@ -6,6 +6,7 @@ public class Audios : MonoBehaviour
 {
     AudioSource audioSource;
     public static float[] cubes = new float[512];
+    
     public static float[] freqBand = new float[8];
 
     public static float[] bufferBand = new float[8];
@@ -79,5 +80,16 @@ public class Audios : MonoBehaviour
 			average /= count;
 			freqBand[i] = (i+1) * 100 * average;
 		}
+	}
+
+    public static float getAvgFrequency() {
+		float avg = 0;
+
+		for (int k = 0; k < 8; k++) {
+			avg += freqBand[k];
+		}
+
+		avg /= 8f;
+		return avg;
 	}
 }

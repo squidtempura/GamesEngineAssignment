@@ -12,6 +12,8 @@ public class GenerateSpheres : MonoBehaviour
 
     public float shift = 1f;
 
+    public float scale = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,7 @@ public class GenerateSpheres : MonoBehaviour
 				Renderer rend = sphere.GetComponent<Renderer>();
 				rend.enabled = true;
                 int j;
+                
                 if(i<=64)
                 {
                     j = 0;
@@ -78,7 +81,7 @@ public class GenerateSpheres : MonoBehaviour
                 rend.sharedMaterial = materials[j]; 
                 Transform s = sphere.transform;
             }
-        
+
         }
     }
 }
