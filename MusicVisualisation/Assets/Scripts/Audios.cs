@@ -57,6 +57,7 @@ public class Audios : MonoBehaviour
         GetAudioSource();
         MakeFrequencyBands();
         BufferBands();
+        CreateAudioBands();
     }
 
     void MakeFrequencyBands() {
