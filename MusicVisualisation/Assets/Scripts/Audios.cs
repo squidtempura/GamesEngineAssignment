@@ -11,7 +11,22 @@ public class Audios : MonoBehaviour
     public static float[] bufferBand = new float[8];
 
     public float[] bufferDecrease = new float[8];
+    public static float[] audioBands = new float[8];
+    public static float[] audioBandBuffers = new float[8];
+    static float[] freqBandHighest = new float[8];
+
     // Start is called before the first frame update
+
+    void CreateAudioBands() {
+		for (int k = 0; k < 8; k++) {
+			if (freqBand[k] > freqBandHighest[k]) {
+				freqBandHighest[k] = freqBand[k];
+			}
+			audioBands [k] = freqBand [k] / freqBandHighest[k];
+			audioBandBuffers [k] = bufferBand [k] / freqBandHighest[k];
+
+		}
+	}
 
     void BufferBands(){
 		for (int k = 0; k < 8; k++) {
