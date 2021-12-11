@@ -5,12 +5,10 @@ using UnityEngine;
 public class Audios : MonoBehaviour
 {
     AudioSource audioSource;
-    public static float[] cubes = new float[512];
-    
+    public static float[] samples = new float[512];
+    //public static float[] spheres = new float[512];
     public static float[] freqBand = new float[8];
-
     public static float[] bufferBand = new float[8];
-
     public float[] bufferDecrease = new float[8];
     public static float[] audioBands = new float[8];
     public static float[] audioBandBuffers = new float[8];
@@ -25,7 +23,6 @@ public class Audios : MonoBehaviour
 			}
 			audioBands [k] = freqBand [k] / freqBandHighest[k];
 			audioBandBuffers [k] = bufferBand [k] / freqBandHighest[k];
-
 		}
 	}
 
@@ -49,7 +46,8 @@ public class Audios : MonoBehaviour
 
     void GetAudioSource()
     {
-        audioSource.GetSpectrumData(cubes,0,FFTWindow.Blackman);
+        audioSource.GetSpectrumData(samples,0,FFTWindow.Blackman);
+		//audioSource.GetSpectrumData(spheres,0,FFTWindow.Blackman);
     }
 
     // Update is called once per frame
@@ -59,6 +57,8 @@ public class Audios : MonoBehaviour
         MakeFrequencyBands();
         BufferBands();
         CreateAudioBands();
+        getAvgFrequency();
+        getAvgMaxFrequency();
     }
 
     void MakeFrequencyBands() {
@@ -73,7 +73,7 @@ public class Audios : MonoBehaviour
 			}
 
 			for (int j = 0; j < sampleCount; j++) {
-				average += cubes [count];
+				average += samples [count];
 				count++;
 			}
 
@@ -87,6 +87,17 @@ public class Audios : MonoBehaviour
 
 		for (int k = 0; k < 8; k++) {
 			avg += freqBand[k];
+		}
+
+		avg /= 8f;
+		return avg;
+	}
+
+    public static float getAvgMaxFrequency() {
+		float avg = 0;
+
+		for (int k = 0; k < 8; k++) {
+			avg += freqBandHighest[k];
 		}
 
 		avg /= 8f;

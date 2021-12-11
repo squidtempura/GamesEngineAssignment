@@ -7,13 +7,9 @@ public class GenerateSpheres : MonoBehaviour
     public GameObject spherePrefab;
     GameObject[] spheres = new GameObject[512];
     public float [] angles = new float[512];
-
     public Material[] materials;
-
     public float shift = 1f;
-
     public float scale = 100;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +41,7 @@ public class GenerateSpheres : MonoBehaviour
 				Renderer rend = sphere.GetComponent<Renderer>();
 				rend.enabled = true;
                 int j;
+                float band;
                 
                 if(i<=64)
                 {
@@ -79,9 +76,15 @@ public class GenerateSpheres : MonoBehaviour
                 }
                 
                 rend.sharedMaterial = materials[j]; 
-                Transform s = sphere.transform;
-            }
 
+                band = Audios.audioBandBuffers[j];
+
+                if(sphere != null)
+                {
+                    GameObject ss = spheres[i];
+                    ss.transform.localScale = new Vector3(1+scale*Mathf.Abs(Audios.samples[i]),1+scale*Mathf.Abs(Audios.samples[i]),1+scale*Mathf.Abs(Audios.samples[i]));
+                }
+            }
         }
     }
 }

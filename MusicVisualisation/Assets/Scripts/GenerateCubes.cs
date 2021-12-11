@@ -34,7 +34,7 @@ public class GenerateCubes : MonoBehaviour
             if(cubes != null)
             {
                 GameObject cube = cubes[i];
-                cube.transform.localScale = new Vector3(1,1+scale*Mathf.Abs(Audios.cubes[i]),1);
+                cube.transform.localScale = new Vector3(1,1+scale*Mathf.Abs(Audios.samples[i]),1);
             }
         }
     }

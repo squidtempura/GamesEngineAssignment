@@ -1001,6 +1001,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3ac549710f21a8d47b78237ecf548736, type: 2}
   - {fileID: 2100000, guid: 4642b4b4120da924b8bbda85c5bbe691, type: 2}
   shift: 1
+  scale: 50
 --- !u!4 &1564310782
 Transform:
   m_ObjectHideFlags: 0
