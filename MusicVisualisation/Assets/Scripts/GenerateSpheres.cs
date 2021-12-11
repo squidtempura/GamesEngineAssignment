@@ -27,7 +27,6 @@ public class GenerateSpheres : MonoBehaviour
             transform.eulerAngles = new Vector3(angle,0,0);
             shift = shift*(-1);
             sphere.transform.position = new Vector3(shift*xPos,0,shift*zPos);
-
         }
     }
 
@@ -43,36 +42,65 @@ public class GenerateSpheres : MonoBehaviour
                 int j;
                 float band;
                 
-                if(i<=64)
+                if(i<=32)
                 {
                     j = 0;
-                }else if(i <= 128)
+                }
+                else if(i <= 64)
                 {
                     j = 1;
                 }
-                else if(i <= 192)
+                else if(i <= 128)
                 {
                     j = 2;
                 }
-                else if(i <= 256)
+                else if(i <= 160)
                 {
                     j = 3;
                 }
-                else if(i <= 320)
+                else if(i <= 192)
                 {
                     j = 4;
                 }
-                else if(i <= 384)
+                else if(i <= 224)
                 {
                     j = 5;
                 }
-                else if(i <= 448)
+                else if(i <= 256)
                 {
                     j = 6;
                 }
-                else
+                else if(i <= 288)
                 {
                     j = 7;
+                }
+                else if(i <= 320)
+                {
+                    j = 0;
+                }
+                else if(i <= 352)
+                {
+                    j = 1;
+                }
+                else if(i <= 384)
+                {
+                    j = 2;
+                }
+                else if(i <= 416)
+                {
+                    j = 3;
+                }
+                else if(i <= 448)
+                {
+                    j = 4;
+                }
+                else if(i <= 480)
+                {
+                    j = 5;
+                }
+                else
+                {
+                    j = 6;
                 }
                 
                 rend.sharedMaterial = materials[j]; 

@@ -67,16 +67,13 @@ public class Audios : MonoBehaviour
 		for (int i = 0; i < 8; i++)  {
 			float average = 0;
 			int sampleCount = (int)Mathf.Pow (2, i + 1);
-
 			if (i == 7) {
 				sampleCount += 2;
 			}
-
 			for (int j = 0; j < sampleCount; j++) {
 				average += samples [count];
 				count++;
 			}
-
 			average /= count;
 			freqBand[i] = (i+1) * 100 * average;
 		}
@@ -88,7 +85,6 @@ public class Audios : MonoBehaviour
 		for (int k = 0; k < 8; k++) {
 			avg += freqBand[k];
 		}
-
 		avg /= 8f;
 		return avg;
 	}
@@ -99,7 +95,6 @@ public class Audios : MonoBehaviour
 		for (int k = 0; k < 8; k++) {
 			avg += freqBandHighest[k];
 		}
-
 		avg /= 8f;
 		return avg;
 	}
