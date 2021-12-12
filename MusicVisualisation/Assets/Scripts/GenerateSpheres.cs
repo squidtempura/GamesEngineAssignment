@@ -5,8 +5,8 @@ using UnityEngine;
 public class GenerateSpheres : MonoBehaviour
 {
     public GameObject spherePrefab;
-    GameObject[] spheres = new GameObject[512];
-    public float [] angles = new float[512];
+    GameObject[] spheres = new GameObject[256];
+    public float [] angles = new float[256];
     public Material[] materials;
     public float shift = 1f;
     public float scale = 100;
@@ -14,13 +14,13 @@ public class GenerateSpheres : MonoBehaviour
     void Start()
     {
         float radius = 100;
-        for (int i = 0; i < 512; i ++)
+        for (int i = 0; i < 256; i ++)
         {
             GameObject sphere = Instantiate(spherePrefab);
             spheres[i] = sphere;
             sphere.name = "Sphere" +i;
             sphere.transform.parent = this.transform;
-            float angle =(360f/512f)*i;
+            float angle =(360f/256)*i;
             angles[i] = angle;
             float xPos = radius*Mathf.Cos(angle);
             float zPos = radius*Mathf.Sin(angle);
@@ -33,7 +33,7 @@ public class GenerateSpheres : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < 512; i++)
+        for(int i = 0; i < 128; i++)
         {
             if (spheres != null) {
 				GameObject sphere = spheres [i];
@@ -50,7 +50,7 @@ public class GenerateSpheres : MonoBehaviour
                 {
                     j = 1;
                 }
-                else if(i <= 128)
+                else if(i<=128)
                 {
                     j = 2;
                 }
@@ -66,10 +66,11 @@ public class GenerateSpheres : MonoBehaviour
                 {
                     j = 5;
                 }
-                else if(i <= 256)
+                else 
                 {
                     j = 6;
                 }
+                /*
                 else if(i <= 288)
                 {
                     j = 7;
@@ -102,6 +103,7 @@ public class GenerateSpheres : MonoBehaviour
                 {
                     j = 6;
                 }
+                */
                 
                 rend.sharedMaterial = materials[j]; 
 

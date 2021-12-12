@@ -6,19 +6,19 @@ public class GenerateCubes : MonoBehaviour
 {
     public GameObject CubePrefab;
     public float scale = 100;
-    GameObject[] cubes = new GameObject[512];
+    GameObject[] cubes = new GameObject[128];
 
     // Start is called before the first frame update
     void Start()
     {
         float radius =  150;
-        for(int i = 0; i < 512; i++)
+        for(int i = 0; i < 128; i++)
         {
             GameObject cube = Instantiate(CubePrefab);
             cubes[i] = cube;
             cube.name = "Cube" + i;
             cube.transform.parent = this.transform;
-            float angle = (360f/512f)*i;
+            float angle = (360f/128)*i;
             float xPos = radius*Mathf.Cos(angle*Mathf.Deg2Rad);
             float zPos = radius*Mathf.Sin(angle*Mathf.Deg2Rad);
             cube.transform.eulerAngles = new Vector3(0,-1f*angle,0);
@@ -29,7 +29,7 @@ public class GenerateCubes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 512; i ++)
+        for (int i = 0; i < 128; i ++)
         {
             if(cubes != null)
             {

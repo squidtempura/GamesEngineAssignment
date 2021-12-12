@@ -6,7 +6,6 @@ public class Audios : MonoBehaviour
 {
     AudioSource audioSource;
     public static float[] samples = new float[512];
-    //public static float[] spheres = new float[512];
     public static float[] freqBand = new float[8];
     public static float[] bufferBand = new float[8];
     public float[] bufferDecrease = new float[8];
@@ -47,7 +46,6 @@ public class Audios : MonoBehaviour
     void GetAudioSource()
     {
         audioSource.GetSpectrumData(samples,0,FFTWindow.Blackman);
-		//audioSource.GetSpectrumData(spheres,0,FFTWindow.Blackman);
     }
 
     // Update is called once per frame
