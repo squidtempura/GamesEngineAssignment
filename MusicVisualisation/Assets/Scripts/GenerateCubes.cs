@@ -31,10 +31,15 @@ public class GenerateCubes : MonoBehaviour
     {
         for (int i = 0; i < 128; i ++)
         {
-            if(cubes != null)
+            if(cubes != null && i <64)
             {
                 GameObject cube = cubes[i];
-                cube.transform.localScale = new Vector3(1,1+scale*Mathf.Abs(Audios.samples[i]),1);
+                cube.transform.localScale = new Vector3(1,1+scale*Mathf.Abs(Audios.samplesCube[i]),1);
+            }
+            else
+            {
+                GameObject cube = cubes[i];
+                cube.transform.localScale = new Vector3(1,1+scale*Mathf.Abs(Audios.samplesCube[i-64]),1);
             }
         }
     }

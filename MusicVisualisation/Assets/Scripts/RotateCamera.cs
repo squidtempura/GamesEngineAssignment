@@ -14,6 +14,6 @@ public class RotateCamera : MonoBehaviour
     void Update()
     {
         Vector3 pivotPoint  = new Vector3(0f,0f,0f); 
-		transform.RotateAround(pivotPoint , Vector3.up, 0.02f + Audios.getAvgMaxFrequency()/100f);
+		transform.RotateAround(pivotPoint , Vector3.up, 0.02f + Audios.getAvgMaxFrequency()/20f);
     }
 }

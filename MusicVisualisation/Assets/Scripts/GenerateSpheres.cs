@@ -54,6 +54,7 @@ public class GenerateSpheres : MonoBehaviour
                 {
                     j = 2;
                 }
+
                 else if(i <= 160)
                 {
                     j = 3;
@@ -112,7 +113,7 @@ public class GenerateSpheres : MonoBehaviour
                 if(sphere != null)
                 {
                     GameObject ss = spheres[i];
-                    ss.transform.localScale = new Vector3(1+scale*Mathf.Abs(Audios.samples[i]),1+scale*Mathf.Abs(Audios.samples[i]),1+scale*Mathf.Abs(Audios.samples[i]));
+                    ss.transform.localScale = new Vector3(1+scale*Mathf.Abs(Audios.samplesSphere[i]),1+scale*Mathf.Abs(Audios.samplesSphere[i]),1+scale*Mathf.Abs(Audios.samplesSphere[i]));
                 }
             }
         }
