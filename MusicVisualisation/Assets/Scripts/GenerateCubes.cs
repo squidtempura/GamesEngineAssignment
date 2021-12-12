@@ -5,13 +5,13 @@ using UnityEngine;
 public class GenerateCubes : MonoBehaviour
 {
     public GameObject CubePrefab;
-    public float scale = 100;
+    public float scale = 80;
     GameObject[] cubes = new GameObject[128];
 
     // Start is called before the first frame update
     void Start()
     {
-        float radius =  150;
+        float radius =  40;
         for(int i = 0; i < 128; i++)
         {
             GameObject cube = Instantiate(CubePrefab);
@@ -22,7 +22,7 @@ public class GenerateCubes : MonoBehaviour
             float xPos = radius*Mathf.Cos(angle*Mathf.Deg2Rad);
             float zPos = radius*Mathf.Sin(angle*Mathf.Deg2Rad);
             cube.transform.eulerAngles = new Vector3(0,-1f*angle,0);
-            cube.transform.position = new Vector3(xPos,0,zPos);
+            cube.transform.position = new Vector3(xPos,100,zPos);
         }
     }
 

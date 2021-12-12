@@ -33,7 +33,7 @@ public class GenerateSpheres : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < 128; i++)
+        for(int i = 0; i < 256; i++)
         {
             if (spheres != null) {
 				GameObject sphere = spheres [i];
