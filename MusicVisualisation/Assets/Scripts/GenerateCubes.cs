@@ -11,7 +11,7 @@ public class GenerateCubes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float radius =  40;
+        float radius =  100;
         for(int i = 0; i < 128; i++)
         {
             GameObject cube = Instantiate(CubePrefab);

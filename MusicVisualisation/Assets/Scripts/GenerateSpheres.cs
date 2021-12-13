@@ -71,40 +71,6 @@ public class GenerateSpheres : MonoBehaviour
                 {
                     j = 6;
                 }
-                /*
-                else if(i <= 288)
-                {
-                    j = 7;
-                }
-                else if(i <= 320)
-                {
-                    j = 0;
-                }
-                else if(i <= 352)
-                {
-                    j = 1;
-                }
-                else if(i <= 384)
-                {
-                    j = 2;
-                }
-                else if(i <= 416)
-                {
-                    j = 3;
-                }
-                else if(i <= 448)
-                {
-                    j = 4;
-                }
-                else if(i <= 480)
-                {
-                    j = 5;
-                }
-                else
-                {
-                    j = 6;
-                }
-                */
                 
                 rend.sharedMaterial = materials[j]; 
 
