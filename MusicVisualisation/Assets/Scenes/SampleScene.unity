@@ -249,15 +249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4d13b530c19c84fbd765b41ccef4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bufferDecrease:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
 --- !u!4 &682766631
 Transform:
   m_ObjectHideFlags: 0
@@ -1014,7 +1005,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3ac549710f21a8d47b78237ecf548736, type: 2}
   - {fileID: 2100000, guid: 4642b4b4120da924b8bbda85c5bbe691, type: 2}
   shift: 1
-  scale: 70
+  scale: 60
 --- !u!4 &1564310782
 Transform:
   m_ObjectHideFlags: 0

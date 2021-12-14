@@ -7,7 +7,7 @@ public class GenerateCubes : MonoBehaviour
     //prefab to instantiate
     public GameObject CubePrefab;
     //scales the height of each cube 
-    public float scale = 80;
+    public float scale = 100;
     //store 128 cubes into an array of game objects
     GameObject[] cubes = new GameObject[128];
 
@@ -16,7 +16,7 @@ public class GenerateCubes : MonoBehaviour
     void Start()
     {
         // radius of the circle of cubes instantiated
-        float radius =  100;
+        float radius =  150;
         // iterate 128 times to instantiate cubes
         for(int i = 0; i < 128; i++)
         {

@@ -12,7 +12,7 @@ public class GenerateSpheres : MonoBehaviour
     public Material[] materials;
     // variable that use to calculate new coordinate of the sphere
     public float shift = 1f;
-    public float scale = 100;
+    public float scale;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,8 +51,7 @@ public class GenerateSpheres : MonoBehaviour
 				GameObject sphere = spheres [i];
 				Renderer rend = sphere.GetComponent<Renderer>();
 				rend.enabled = true;
-                int j;
-                
+                int j;                          
                 // every 32 spheres in a group
                 if(i<=32)
                 {
@@ -90,8 +89,9 @@ public class GenerateSpheres : MonoBehaviour
                 if(sphere != null)
                 {
                     GameObject ss = spheres[i];
-                    ss.transform.localScale = new Vector3(1+scale*Mathf.Abs(Audios.samplesSphere[i]),1+scale*Mathf.Abs(Audios.samplesSphere[i]),1+scale*Mathf.Abs(Audios.samplesSphere[i]));
+                    ss.transform.localScale = new Vector3(1.5f+scale*Mathf.Abs(Audios.samplesSphere[i]),1.5f+scale*Mathf.Abs(Audios.samplesSphere[i]),1.5f+scale*Mathf.Abs(Audios.samplesSphere[i]));
                 }
+                
             }
         }
     }

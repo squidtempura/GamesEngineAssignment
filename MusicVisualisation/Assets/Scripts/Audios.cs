@@ -13,8 +13,6 @@ public class Audios : MonoBehaviour
 	public static float[] samplesCube = new float[64];
     // for the spheres, divide the range of the sounds into 256
 	public static float[] samplesSphere = new float[256];
-    public static float[] audioBandBuffers = new float[8];
-    static float[] freqBandHighest = new float[8];
 
     // Start is called before the first frame update
     void Start()
@@ -43,15 +41,5 @@ public class Audios : MonoBehaviour
     void Update()
     {
         GetAudioSource();
-        getAvgMaxFrequency();
-    }
-    public static float getAvgMaxFrequency() {
-		float avg = 0;
-
-		for (int k = 0; k < 8; k++) {
-			avg += freqBandHighest[k];
-		}
-		avg /= 8f;
-		return avg;
-	}
+    } 
 }
